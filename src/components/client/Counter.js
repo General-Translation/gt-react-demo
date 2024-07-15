@@ -21,9 +21,9 @@ export default function Counter() {
                     {t('counter.default')}
                 </Numeric>
             </p>
-            <Button variant="secondary" onClick={() => {setCount(prev => prev + 1)}}>{t('add')}</Button>
+            <Button variant="secondary" onClick={() => {console.log(count); setCount(prev => prev + 1)}}>{t('add')}</Button>
             {" "}
-            <Button variant="secondary" onClick={() => {setCount(prev => prev - 1)}}>{t('subtract')}</Button>
+            <Button variant="secondary" onClick={() => {console.log(count); setCount(prev => prev - 1)}}>{t('subtract')}</Button>
         </div>
     )
 }
