@@ -128,7 +128,7 @@ export default async function Page() {
               <Counter />
             </GTProvider>
           </DemoExample>
-          <Link href='/'></Link>
+          <Link className="font-medium text-primary underline underline-offset-4" href='/https://github.com/General-Translation/gt-react-demo/blob/main/src/components/client/Counter.js'>{await intl("See code")}</Link>
       </DemoComponent>
 
       <DemoComponent>
@@ -150,7 +150,7 @@ export default async function Page() {
                 <NameAndGender />
             </GTProvider>
           </DemoExample>
-          <Link href='/'></Link>
+          <Link className="font-medium text-primary underline underline-offset-4" href='https://github.com/General-Translation/gt-react-demo/blob/main/src/components/client/NameAndGender.js'>{await intl("See code")}</Link>
       </DemoComponent>
       
     </main>
