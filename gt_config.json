@@ -1,4 +1,3 @@
 {
-    "defaultPage": "demo",
-    "baseURL": "http://localhost:10000"
+    "defaultPage": "demo"
 }
