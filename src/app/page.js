@@ -1,113 +1,158 @@
 import Image from "next/image";
+import Link from "next/link";
 
-export default function Home() {
+import { I18N, Private, Numeric, Value, Variable, intl, GTProvider } from "gt-react/next";
+import DemoComponent from "@/components/demo/DemoComponent";
+import DemoExample from "@/components/demo/DemoExample";
+import DemoCode from "@/components/demo/DemoCode";
+import Counter from "@/components/client/Counter";
+import NameAndGender from "@/components/client/NameAndGender";
+
+export default async function Page() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className="z-10 max-w-5xl w-full items-center justify-between font-mono text-sm lg:flex">
-        <p className="fixed left-0 top-0 flex w-full justify-center border-b border-gray-300 bg-gradient-to-b from-zinc-200 pb-6 pt-8 backdrop-blur-2xl dark:border-neutral-800 dark:bg-zinc-800/30 dark:from-inherit lg:static lg:w-auto  lg:rounded-xl lg:border lg:bg-gray-200 lg:p-4 lg:dark:bg-zinc-800/30">
-          Get started by editing&nbsp;
-          <code className="font-mono font-bold">src/app/page.js</code>
-        </p>
-        <div className="fixed bottom-0 left-0 flex h-48 w-full items-end justify-center bg-gradient-to-t from-white via-white dark:from-black dark:via-black lg:static lg:h-auto lg:w-auto lg:bg-none">
-          <a
-            className="pointer-events-none flex place-items-center gap-2 p-8 lg:pointer-events-auto lg:p-0"
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{" "}
+    <main className="flex flex-col items-center p-16">
+
+      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-green-200 after:via-green-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-green-700 before:dark:opacity-10 after:dark:from-green-900 after:dark:via-green after:dark:opacity-40 before:lg:h-[360px] z-[-1] cursor:pointer">
+      </div>
+
+      <p>
+        <Link target="_blank" href="https://www.generaltranslation.com">
             <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
+              src="/invisblack.png"
+              alt="GT Logo"
               className="dark:invert"
-              width={100}
-              height={24}
+              width={45}
+              height={45}
               priority
             />
-          </a>
-        </div>
+        </Link>
+      </p>
+
+      <h2 className="text-center p-8 text-3xl font-semibold tracking-tight">
+        <I18N><code>gt-react</code> Demo</I18N>
+      </h2>
+
+      <div className="p-4 w-[90%] max-w-[450px]">
+        <I18N>
+        <p className="leading-7 [&:not(:first-child)]:mt-3">
+          <b><code>gt-react</code> is an internationalization library for people who move fast and break things. </b>
+        </p>
+        <p className="leading-7 [&:not(:first-child)]:mt-3">
+          It's add and go. No need to hire translators, no worrying about which languages you support.
+          When you <code>npm install gt-react</code>, your app supports them all.
+        </p>
+        <p className="leading-7 [&:not(:first-child)]:mt-3">
+          Unlike other internationalization libraries, <code>gt-react</code> translates entire React components. 
+          So you don't have to worry about translating in context. And you don't need to change your site structure to accomodate it.
+        </p>
+        <p className="leading-7 [&:not(:first-child)]:mt-3">
+          Engineers shouldn't have to worry about I18N. So don't. Install <code>gt-react</code>.
+        </p>
+        </I18N>
       </div>
 
-      <div className="relative flex place-items-center before:absolute before:h-[300px] before:w-full sm:before:w-[480px] before:-translate-x-1/2 before:rounded-full before:bg-gradient-radial before:from-white before:to-transparent before:blur-2xl before:content-[''] after:absolute after:-z-20 after:h-[180px] after:w-full sm:after:w-[240px] after:translate-x-1/3 after:bg-gradient-conic after:from-sky-200 after:via-blue-200 after:blur-2xl after:content-[''] before:dark:bg-gradient-to-br before:dark:from-transparent before:dark:to-blue-700 before:dark:opacity-10 after:dark:from-sky-900 after:dark:via-[#0141ff] after:dark:opacity-40 before:lg:h-[360px] z-[-1]">
-        <Image
-          className="relative dark:drop-shadow-[0_0_0.3rem_#ffffff70] dark:invert"
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
+      <div className="p-4 w-[90%] max-w-[450px]">
+        <I18N>
+          <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
+            Examples
+          </h4>
+          <p className="leading-7 [&:not(:first-child)]:mt-3">
+            To see <code>gt-react</code> in action, change your browser language and reload the page.
+          </p>
+        </I18N>
       </div>
 
-      <div className="mb-32 grid text-center lg:max-w-5xl lg:w-full lg:mb-0 lg:grid-cols-4 lg:text-left">
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Docs{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Find in-depth information about Next.js features and API.
-          </p>
-        </a>
+      <DemoComponent>
+          <I18N><p className="leading-7 [&:not(:first-child)]:mt-3">
+            It works for simple text, or complex nested tags:
+          </p></I18N>
+          <DemoExample>
+            <I18N>
+              <b>John's</b> happy <i>customer</i>.
+            </I18N>
+          </DemoExample>
+          <DemoCode title={await intl("See code")}>
+            {
+              `import { I18N } from 'gt-react/next'\n\n` +
+              `function Example() {\n` +
+              `\treturn (\n` +
+              `\t\t<I18N>\n` +
+              `\t\t\t<b>John's</b> happy <i>customer</i>.\n` +
+              `\t\t</I18N>\n` +
+              `\t);\n` +
+              `}`
+            }
+          </DemoCode>
+      </DemoComponent>
 
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800 hover:dark:bg-opacity-30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Learn{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Learn about Next.js in an interactive course with&nbsp;quizzes!
-          </p>
-        </a>
+      <DemoComponent>
+          <I18N><p className="leading-7 [&:not(:first-child)]:mt-3">
+            Text which shouldn't be translated can be left out, or marked as private.
+          </p></I18N>
+          <DemoExample>
+            <I18N>
+              <p>This text should be translated.</p>
+              <Private><p>This text should <b>not</b> be translated!</p></Private>
+            </I18N>
+          </DemoExample>
+          <DemoCode title={await intl("See code")}>
+            {
+              `import { I18N, Private } from 'gt-react/next'\n\n` +
+              `function Example() {\n` +
+              `\treturn (\n` +
+              `\t\t<I18N>\n` +
+              `\t\t\t<p>This text should be translated!</p>\n` +
+              `\t\t\t<Private>\n` +
+              `\t\t\t\t<p>This text should <b>not</b> be translated!</p>\n` +
+              `\t\t\t</Private>\n` +
+              `\t\t</I18N>\n` +
+              `\t);\n` +
+              `}`
+            }
+          </DemoCode>
+      </DemoComponent>
 
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Templates{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50`}>
-            Explore starter templates for Next.js.
-          </p>
-        </a>
+      <DemoComponent>
+          <I18N><p className="leading-7 [&:not(:first-child)]:mt-3">
+            Numbers work perfectly, including in languages where there are complex number forms, like duals, which don't exist in English.
+          </p></I18N>
+          <DemoExample>
+            <GTProvider dictionary = {{
+                "counter.singular": <>You have a single new message!</>,
+                "counter.zero": <>You have no new messages!</>,
+                "counter.default": <>You have <Variable name="n"></Variable> new messages!</>,
+                "counter.dual": <>You have exactly two new messages.</>,
+                "add": <>Add</>,
+                "subtract": <>Subtract</>
+            }} >
+              <Counter />
+            </GTProvider>
+          </DemoExample>
+          <Link href='/'></Link>
+      </DemoComponent>
 
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className="group rounded-lg border border-transparent px-5 py-4 transition-colors hover:border-gray-300 hover:bg-gray-100 hover:dark:border-neutral-700 hover:dark:bg-neutral-800/30"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2 className={`mb-3 text-2xl font-semibold`}>
-            Deploy{" "}
-            <span className="inline-block transition-transform group-hover:translate-x-1 motion-reduce:transform-none">
-              -&gt;
-            </span>
-          </h2>
-          <p className={`m-0 max-w-[30ch] text-sm opacity-50 text-balance`}>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
+      <DemoComponent>
+          <I18N><p className="leading-7 [&:not(:first-child)]:mt-3">
+            Non-number variables are also easy to add and translate around.
+          </p></I18N>
+          <DemoExample>
+            <GTProvider dictionary = {{
+                "customer.male": <>His name is <Variable name="name"></Variable>.</>,
+                "customer.female": <>Her name is <Variable name="name"></Variable>.</>,
+                "customer.default": <>Their name is <Variable name="name"></Variable>.</>,
+                "male": "Male",
+                "female": "Female",
+                "other": "Other",
+                "prefer not to say": "I'd prefer not to say",
+                "gender.selector": "Gender...",
+                "name.input": "Name..."
+            }}>
+                <NameAndGender />
+            </GTProvider>
+          </DemoExample>
+          <Link href='/'></Link>
+      </DemoComponent>
+      
     </main>
   );
 }
