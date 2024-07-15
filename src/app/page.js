@@ -33,7 +33,7 @@ export default async function Page() {
       </h2>
 
       <div className="p-4 w-[90%] max-w-[450px]">
-        <I18N>
+        <I18N id='pitch'>
         <p className="leading-7 [&:not(:first-child)]:mt-3">
           <b><code>gt-react</code> is an internationalization library for people who move fast and break things. </b>
         </p>
@@ -52,18 +52,18 @@ export default async function Page() {
       </div>
 
       <div className="p-4 w-[90%] max-w-[450px]">
-        <I18N>
+        <I18N id='examples'>
           <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
             Examples
           </h4>
           <p className="leading-7 [&:not(:first-child)]:mt-3">
-            To see <code>gt-react</code> in action, change your browser language and reload the page.
+            To see <code>gt-react</code> in action, change your browser language and reload the page. The new language should load in seamlessly. When encountering a new language for the first time, content is displayed in the default language (in this case, English) while the translation loads.
           </p>
         </I18N>
       </div>
 
       <DemoComponent>
-          <I18N><p className="leading-7 [&:not(:first-child)]:mt-3">
+          <I18N id='intro1'><p className="leading-7 [&:not(:first-child)]:mt-3">
             It works for simple text, or complex nested tags:
           </p></I18N>
           <DemoExample>
@@ -86,7 +86,7 @@ export default async function Page() {
       </DemoComponent>
 
       <DemoComponent>
-          <I18N><p className="leading-7 [&:not(:first-child)]:mt-3">
+          <I18N id='intro2'><p className="leading-7 [&:not(:first-child)]:mt-3">
             Text which shouldn't be translated can be left out, or marked as private.
           </p></I18N>
           <DemoExample>
@@ -113,7 +113,7 @@ export default async function Page() {
       </DemoComponent>
 
       <DemoComponent>
-          <I18N><p className="leading-7 [&:not(:first-child)]:mt-3">
+          <I18N id='intro3'><p className="leading-7 [&:not(:first-child)]:mt-3">
             Numbers work perfectly, including in languages where there are complex number forms, like duals, which don't exist in English.
           </p></I18N>
           <DemoExample>
@@ -128,11 +128,12 @@ export default async function Page() {
               <Counter />
             </GTProvider>
           </DemoExample>
-          <Link className="font-medium text-primary underline underline-offset-4" href='/https://github.com/General-Translation/gt-react-demo/blob/main/src/components/client/Counter.js'>{await intl("See code")}</Link>
+          <br/>
+          <Link target="_blank" className="font-medium text-primary underline underline-offset-4" href='https://github.com/General-Translation/gt-react-demo/blob/main/src/components/client/Counter.js'>{await intl("See code")}</Link>
       </DemoComponent>
 
       <DemoComponent>
-          <I18N><p className="leading-7 [&:not(:first-child)]:mt-3">
+          <I18N id='intro4'><p className="leading-7 [&:not(:first-child)]:mt-3">
             Non-number variables are also easy to add and translate around.
           </p></I18N>
           <DemoExample>
@@ -150,7 +151,8 @@ export default async function Page() {
                 <NameAndGender />
             </GTProvider>
           </DemoExample>
-          <Link className="font-medium text-primary underline underline-offset-4" href='https://github.com/General-Translation/gt-react-demo/blob/main/src/components/client/NameAndGender.js'>{await intl("See code")}</Link>
+          <br/>
+          <Link target="_blank" className="font-medium text-primary underline underline-offset-4" href='https://github.com/General-Translation/gt-react-demo/blob/main/src/components/client/NameAndGender.js'>{await intl("See code")}</Link>
       </DemoComponent>
       
     </main>
