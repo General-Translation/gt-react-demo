@@ -53,7 +53,7 @@ export default function NameAndGender() {
                     }
                 }}>
                     {t('customer.default')}
-                </Value>
+                </Branch>
             </p> }
         </div>
     )
