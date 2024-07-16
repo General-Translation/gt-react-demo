@@ -1,10 +1,11 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { I18N, Private, Numeric, Value, Variable, intl, GTProvider } from "gt-react/next";
+import { I18N, Private, Numeric, Branch, Variable, intl, GTProvider } from "gt-react/next";
 import DemoComponent from "@/components/demo/DemoComponent";
 import DemoExample from "@/components/demo/DemoExample";
 import DemoCode from "@/components/demo/DemoCode";
+
 import Counter from "@/components/client/Counter";
 import NameAndGender from "@/components/client/NameAndGender";
 
