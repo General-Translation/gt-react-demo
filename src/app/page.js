@@ -8,8 +8,14 @@ import DemoCode from "@/components/demo/DemoCode";
 
 import Counter from "@/components/client/Counter";
 import NameAndGender from "@/components/client/NameAndGender";
+import { redirect } from "next/navigation";
 
 export default async function Page() {
+
+  // redirecting so that everything is on the main site
+  // this project still may be useful as a public demo
+  redirect('https://www.generaltranslation.com/demo')
+
   return (
     <main className="flex flex-col items-center p-16">
 
@@ -34,7 +40,7 @@ export default async function Page() {
       </h2>
 
       <div className="p-4 w-[90%] max-w-[450px]">
-        <I18N id='pitch'>
+        <I18N id='demo.pitch'>
         <p className="leading-7 [&:not(:first-child)]:mt-3">
           <b><code>gt-react</code> is an internationalization library for people who move fast and break things. </b>
         </p>
@@ -53,7 +59,7 @@ export default async function Page() {
       </div>
 
       <div className="p-4 w-[90%] max-w-[450px]">
-        <I18N id='examples'>
+        <I18N id='demo.examples'>
           <h4 className="scroll-m-20 text-xl font-semibold tracking-tight">
             Examples
           </h4>
@@ -64,7 +70,7 @@ export default async function Page() {
       </div>
 
       <DemoComponent>
-          <I18N id='intro1'><p className="leading-7 [&:not(:first-child)]:mt-3">
+          <I18N id='demo.intro1'><p className="leading-7 [&:not(:first-child)]:mt-3">
             It works for simple text, or complex nested tags:
           </p></I18N>
           <DemoExample>
@@ -87,7 +93,7 @@ export default async function Page() {
       </DemoComponent>
 
       <DemoComponent>
-          <I18N id='intro2'><p className="leading-7 [&:not(:first-child)]:mt-3">
+          <I18N id='demo.intro2'><p className="leading-7 [&:not(:first-child)]:mt-3">
             Text which shouldn't be translated can be left out, or marked as private.
           </p></I18N>
           <DemoExample>
@@ -114,7 +120,7 @@ export default async function Page() {
       </DemoComponent>
 
       <DemoComponent>
-          <I18N id='intro3'><p className="leading-7 [&:not(:first-child)]:mt-3">
+          <I18N id='demo.intro3'><p className="leading-7 [&:not(:first-child)]:mt-3">
             Numbers work perfectly, including in languages where there are complex number forms, like duals, which don't exist in English.
           </p></I18N>
           <DemoExample>
@@ -134,7 +140,7 @@ export default async function Page() {
       </DemoComponent>
 
       <DemoComponent>
-          <I18N id='intro4'><p className="leading-7 [&:not(:first-child)]:mt-3">
+          <I18N id='demo.intro4'><p className="leading-7 [&:not(:first-child)]:mt-3">
             Non-number variables are also easy to add and translate around.
           </p></I18N>
           <DemoExample>
