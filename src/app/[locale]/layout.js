@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import "./globals.css";
+import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -8,9 +8,10 @@ export const metadata = {
   description: "A demo site for gt-react",
 };
 
-export default function RootLayout({ children }) {
+export default function RootLayout({ children, params }) {
+
   return (
-    <html>
+    <html lang={params.locale}>
       <body className={inter.className}>{children}</body>
     </html>
   );

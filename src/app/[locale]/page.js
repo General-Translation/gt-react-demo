@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import { I18N, Private, Numeric, Branch, Variable, intl, GTProvider } from "gt-react/next";
+import { I18N, Private, Numeric, Value, Variable, intl, GTProvider } from "gt-react/next";
 import DemoComponent from "@/components/demo/DemoComponent";
 import DemoExample from "@/components/demo/DemoExample";
 import DemoCode from "@/components/demo/DemoCode";
@@ -14,7 +14,7 @@ export default async function Page() {
 
   // redirecting so that everything is on the main site
   // this project still may be useful as a public demo
-  redirect('https://www.generaltranslation.com/demo')
+  if (process.env.GT_DEFAULT_PAGE !== 'demo-localhost') redirect('https://www.generaltranslation.com/demo')
 
   return (
     <main className="flex flex-col items-center p-16">

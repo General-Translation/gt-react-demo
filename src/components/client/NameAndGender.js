@@ -1,7 +1,7 @@
 'use client'
 
 import { Input } from "@/components/ui/input"
-import { useGT, Branch } from "gt-react/client";
+import { useGT, Value } from "gt-react/client";
 import { useState } from "react"
 
 import {
@@ -46,14 +46,14 @@ export default function NameAndGender() {
             </Select>
             <br/>
             { name && <p className="leading-7 mb-3">
-                 <Branch name={name} gender={gender} branches={{
+                 <Value name={name} gender={gender} branches={{
                     gender: {
                         male: t('customer.male'),
                         female: t('customer.female')
                     }
                 }}>
                     {t('customer.default')}
-                </Branch>
+                </Value>
             </p> }
         </div>
     )
